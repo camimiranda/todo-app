@@ -12,8 +12,8 @@ export class AppComponent {
   title = 'ToDo App';
   todoArray= [];
   todo: String;
-  showForm: boolean = true;
-
+  
+ 
   constructor(private todoDataService: TodoDataService){
 
   }
@@ -31,6 +31,5 @@ export class AppComponent {
       }
      }
   }
-  
   
 }
