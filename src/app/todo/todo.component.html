@@ -1,0 +1,18 @@
+<div class="container">
+  <form [formGroup]="todoForm">
+    <div class="form-group">
+      <h1 class="text-center text-primary"> ToDo App</h1>
+      <div class="form-group">
+        <input type="text" class="form-control" name="todo" [formControl]="todoForm.get('todo')" *ngIf="isValid()" 
+         placeholder="What needs to be done?" required>
+            <div *ngIf="todoForm.get('todo').errors && todoForm.get('todo').dirty && todoForm.get('todo').invalid && !isValid()" class="alert alert-danger">
+                   Fill is required
+            </div>
+      </div>
+      <app-todo-list [todoList]="todoArray" (remove)="onRemoveTodo($event)"></app-todo-list>
+      <button class="input-group-text" (click)="addTodo()">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+  </form>
+</div>

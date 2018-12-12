@@ -1,0 +1,9 @@
+i{
+    float: right;
+    color: #888;
+    cursor: pointer;
+}
+span.title{
+    font-weight: 900;
+    font-size: 16px;
+}
