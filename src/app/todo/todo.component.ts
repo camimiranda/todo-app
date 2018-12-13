@@ -10,21 +10,21 @@ import { Todo } from '../todo';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todoArray = [];
+  todoArray: Array<Todo>;
   todoForm: FormGroup;
-  todo: Todo;
 
   constructor( private todoDataService: TodoDataService,
     protected formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.buildForm();
+    this.todoArray = this.todoDataService.getAllTodos();
   }
 
   addTodo(){
     if(this.todoForm.get('todo').value){
-      this.todoArray.push(this.todoForm.get('todo').value);
-      console.log(this.todoArray);
+      let newTodo: Todo = new Todo(this.todoForm.get('todo').value, 'description');
+      this.todoArray = this.todoDataService.addTodo(newTodo);
       this.todoForm.get('todo').setValue('');
     }
   }

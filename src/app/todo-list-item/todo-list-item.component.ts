@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
   styleUrls: ['./todo-list-item.component.css']
 })
 export class TodoListItemComponent implements OnInit {
-  @Input() todo: string;
+  @Input() todo: Todo;
   @Output() remove: EventEmitter<String> = new EventEmitter(); 
   visible: boolean;
 

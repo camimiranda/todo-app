@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Todo } from '../todo';
+import { TodoDataService } from '../todo-data.service';
 
 @Component({
   selector: 'app-todo-item-list-detail',
@@ -6,12 +8,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./todo-item-list-detail.component.css']
 })
 export class TodoItemListDetailComponent implements OnInit {
-  @Input() todoItem: String;
+  @Input() todoItem: Todo;
   @Input() visible: Boolean;
 
-  constructor() { }
+
+  constructor(private todoDataService: TodoDataService) { }
 
   ngOnInit() {
+  }
+
+  editTodo(newDescription) {
+    this.todoDataService.updateTodoByName(this.todoItem, newDescription);
   }
 
 }

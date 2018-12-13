@@ -5,31 +5,31 @@ import { Todo } from './todo';
   providedIn: 'root'
 })
 export class TodoDataService {
-  actual_id: number = 0;
-  todoArray = [];
+  todoArray: Array<Todo>;
 
-  constructor() { }
+  constructor() {
+    this.todoArray = [];
+  }
 
-  addTodo(value){
-    debugger;
-    this.todoArray.push(value);
-    console.log(this.todoArray);
+  addTodo(todo){
+      this.todoArray.push(todo);
+      return this.todoArray;
   }
   deleteTodoById(toDo: Todo): TodoDataService {
     this.todoArray =  this.todoArray.filter(todo => todo.id !== toDo.id);
     return this;
   }
   
-  updateTodoById(id: number, values: Object = {}): Todo {
-    let todo = this.getTodoById(id);
-    if(!todo){
-      return null;
-    } 
-    Object.assign(todo, values);
-    return todo;
+  updateTodoByName(actualTodo, description) {
+    let updateTodo: {} =  this.todoArray.filter(todo => todo.title === actualTodo.title).map((item) => item.description = description);
+    let newTodo: Todo = new Todo(actualTodo.title, description);
+    console.log(newTodo);
+    Object.assign(actualTodo, updateTodo);
+    // console.log(actualTodo);
+    // console.log(this.todoArray);
   }
 
-  getAllTodos(): Todo[] {
+  getAllTodos() {
     return  this.todoArray; 
   }
 
@@ -37,10 +37,10 @@ export class TodoDataService {
     return  this.todoArray.filter(todo => todo.id === id).pop();
   }
 
-  toggleTodoComplete (todo: Todo){
-    let updatedTodo = this.updateTodoById(todo.id, {
-      complete: !todo.complete
-    });
-    return updatedTodo;
-  }
+  // toggleTodoComplete (todo: Todo){
+  //   let updatedTodo = this.updateTodoById(todo.id, {
+  //     complete: !todo.complete
+  //   });
+  //   return updatedTodo;
+  // }
 }

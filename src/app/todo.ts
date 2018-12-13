@@ -3,7 +3,11 @@ export class Todo {
     title: string;
     description: string;
     complete: boolean = false;
-    constructor(values: Object = {}){
-        Object.assign(this, values);
+    constructor(title, description?){
+        let aux = {
+            title: title,
+            description: description
+        }
+        Object.assign(this, aux);
     }
 }
