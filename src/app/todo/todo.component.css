@@ -4,15 +4,16 @@
 
 body{
  padding: 0;
- margin: 0;
+ margin: 4em;
+ background: orange;
 }
 form{
- max-width: 30em;
- margin: 4em auto;
- position: relative;
+    max-width: 30em;
+    margin: 4em auto;
+    position: relative;
     background: #f4f4f4;
-    padding: 2em 3em;
-    overflow: hidden;
+    padding: 2em;
+    box-sizing: content-box;
 }
 form h1{
     font-family: "Raleway";
@@ -25,7 +26,8 @@ form input[type=text]::placeholder{
 
 form .input-group-text{
     background: #F97300;
-    border-radius: 50%;
+    border-radius: 60%;
+    border: solid#F97300;
     width: 5em;
     height: 5em;
     padding: 1em 23px;
@@ -39,9 +41,21 @@ form .input-group-text i{
     font-size: 2em;
 }
 form .form-control{
- height: 3em;
+    height: 3em;
     font-family: "Raleway";
 }
 form .form-control:focus{
  box-shadow: 0;
+ 
 }
+.flex-button{
+    display: flex;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1080px){
+    #flex-container-2{
+        display: flex;
+    }
+    
+}
+

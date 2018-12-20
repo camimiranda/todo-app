@@ -1,4 +1,10 @@
-<span class="title">{{ todo.title }} </span>      <i class="glyphicon glyphicon-align-justify" (click)="onChangeVisiblity()" aria-hidden="true"> </i> 
-<i (click)="removeTodo(todo)" class="material-icons">delete</i> 
-<i (click)="editTodo(todo)" class="material-icons">pencil</i> 
-<app-todo-item-list-detail [todoItem]="todo" [visible]="visible" ></app-todo-item-list-detail>
+<div class="container-1">
+    <label for="filled-in-box">
+        <input type="checkbox" class="checkbox-orange" id="filled-in-box" checked="checked" />
+    </label>
+    <span class="title">{{ todo.title }} </span> <i class="glyphicon glyphicon-align-justify" (click)="onChangeVisiblity()"
+        aria-hidden="true"> </i>
+    <i (click)="removeTodo(todo)" class="material-icons">delete</i>
+    <i (click)="editTodo(todo)" class="material-icons">pencil</i>
+</div>
+<app-todo-item-list-detail [todoItem]="todo" [visible]="visible"></app-todo-item-list-detail>

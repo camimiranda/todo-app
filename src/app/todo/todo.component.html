@@ -1,18 +1,20 @@
-<div class="container">
+<div class="flex-container">
   <form [formGroup]="todoForm">
-    <div class="form-group">
-      <h1 class="text-center text-primary"> ToDo App</h1>
-      <div class="form-group">
-        <input type="text" class="form-control" name="todo" [formControl]="todoForm.get('todo')" *ngIf="isValid()" 
-         placeholder="What needs to be done?" required>
-            <div *ngIf="todoForm.get('todo').errors && todoForm.get('todo').dirty && todoForm.get('todo').invalid && !isValid()" class="alert alert-danger">
-                   Fill is required
-            </div>
+    <h1 class="text-center text-primary"> To-Do List</h1>
+    <div id="flex-container-2" class="form-group">
+      <input type="text" class="form-control" id="form-orange" name="todo" [formControl]="todoForm.get('todo')" *ngIf="isValid()"
+        placeholder="What needs to be done?" required>
+      <div *ngIf="todoForm.get('todo').errors && todoForm.get('todo').dirty && todoForm.get('todo').invalid && !todoForm.get('todo').touched"
+        class="alert alert-danger">
+        Fill is required
       </div>
-      <app-todo-list [todoList]="todoArray" (remove)="onRemoveTodo($event)"></app-todo-list>
+    </div>
+    <app-todo-list [todoList]="todoArray" (remove)="onRemoveTodo($event)"></app-todo-list>
+    <div class="flex-button">
       <button class="input-group-text" (click)="addTodo()">
         <i class="material-icons">add</i>
       </button>
     </div>
+
   </form>
 </div>

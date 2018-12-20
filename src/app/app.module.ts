@@ -8,6 +8,9 @@ import { TodoListItemComponent } from './todo-list-item/todo-list-item.component
 import { TodoComponent } from './todo/todo.component';
 import { TodoItemListDetailComponent } from './todo-item-list-detail/todo-item-list-detail.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,7 @@ import { TodoItemListDetailComponent } from './todo-item-list-detail/todo-item-l
     TodoItemListDetailComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, ReactiveFormsModule, AppRoutingModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

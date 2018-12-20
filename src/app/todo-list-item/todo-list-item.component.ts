@@ -9,6 +9,7 @@ import { Todo } from '../todo';
 export class TodoListItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() remove: EventEmitter<String> = new EventEmitter(); 
+  // @Output() edit: EventEmitter<
   visible: boolean;
 
   constructor() { }
