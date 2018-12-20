@@ -2,14 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
-body{
- padding: 0;
- margin: 4em;
- background: orange;
-}
 form{
-    max-width: 30em;
     margin: 4em auto;
+    width: 30em;
+    height: auto;
     position: relative;
     background: #f4f4f4;
     padding: 2em;
@@ -18,6 +14,7 @@ form{
 form h1{
     font-family: "Raleway";
     color:#F97300; 
+    text-align: center;
 }
 form input[type=text]::placeholder{
    font-family: "Raleway";
@@ -28,14 +25,12 @@ form .input-group-text{
     background: #F97300;
     border-radius: 60%;
     border: solid#F97300;
-    width: 5em;
     height: 5em;
     padding: 1em 23px;
     color: #fff;
     position: absolute;
     right: 13px;
     top: 68px;
-    cursor: pointer;
 }
 form .input-group-text i{
     font-size: 2em;
@@ -52,10 +47,32 @@ form .form-control:focus{
     display: flex;
 }
 
-@media screen and (min-width: 200px) and (max-width: 1080px){
-    #flex-container-2{
-        display: flex;
+
+@media screen and (max-width: 600px),(max-width:800px){
+    .flex-container{
+        flex: 5 0px; 
+        flex-direction: column;
     }
+    form{
+        margin: 5em auto;
+        width: auto;
+        height: auto;
+    }
+    form .input-group-text{
+        background: #F97300;
+        border-radius: 60%;
+        border: solid#F97300;
+        height: 5em;
+        padding: 1em 15px;
+        color: #fff;
+        position: absolute;
+        right: 13px;
+        top: 68px;
+    }
+    form .input-group-text i{
+        font-size: 2em;
+    }
+
     
 }
 
