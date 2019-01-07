@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../todo';
+import { Todo } from '../todo.model';
 import { TodoDataService } from '../todo-data.service';
 
 @Component({

@@ -1,51 +1,5 @@
-/* Menu styles */
-a {
-    font-size: 16px;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+*{
     font-family: "Raleway";
 }
-nav a:hover{
-    background-color: rgb(245, 195, 103);
-    font-weight: bold;
-    color: orangered;
-}
-
-nav i.material-icons {
-    display: block;
-    font-size: 24px;
-    height: 65px;
-    line-height: 56px;
-}
-/* Large screen */
-.navigation {
-    display: flex;
-    flex-flow: row wrap;
-    background-color:orange;
-    list-style: none;
-    margin: 0;
-}
-
-/* Responsive nav */
-@media all and (max-width: 800px) {
-    .navigation{
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-    }
-  }
-
-@media all and (max-width: 600px) {
-    .navigation {
-        -webkit-flex-flow: column wrap;
-        flex-flow: column wrap;
-        padding: 0;
-        background-color:orange;
-        list-style: none;
-        margin: 0;
-      }
-    .navigation li a { 
-        text-align: center; 
-        padding: 5px;
-      }
-    nav .brand-logo right{
-        display:block;
-    }
-  }

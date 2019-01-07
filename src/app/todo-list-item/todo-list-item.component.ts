@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { Todo } from '../todo';
+import { Todo } from '../todo.model';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -8,7 +8,7 @@ import { Todo } from '../todo';
 })
 export class TodoListItemComponent implements OnInit {
   @Input() todo: Todo;
-  @Output() remove: EventEmitter<String> = new EventEmitter(); 
+  @Output() remove: EventEmitter<String> = new EventEmitter();
   // @Output() edit: EventEmitter<
   visible: boolean;
 
@@ -18,16 +18,15 @@ export class TodoListItemComponent implements OnInit {
     this.visible = false;
   }
 
-  removeTodo(todo){
+  removeTodo(todo) {
     this.remove.emit(todo);
   }
   onChangeVisiblity() {
-    if(this.visible){
-      this.visible= false;
+    if (this.visible) {
+      this.visible = false;
     } else {
       this.visible = true;
     }
-    
   }
 
 }

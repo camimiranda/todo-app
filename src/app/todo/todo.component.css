@@ -21,7 +21,7 @@ form input[type=text]::placeholder{
    color:#666; 
 }
 
-form .input-group-text{
+.input-group-text{
     background: #F97300;
     border-radius: 60%;
     border: solid#F97300;
@@ -58,7 +58,7 @@ form .form-control:focus{
         width: auto;
         height: auto;
     }
-    form .input-group-text{
+    .input-group-text{
         background: #F97300;
         border-radius: 60%;
         border: solid#F97300;

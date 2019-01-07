@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
-import { isNgTemplate } from '@angular/compiler';
+import { Todo } from './todo.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoDataService {
-  todoArray: Array<Todo>;
+  todoArray: Todo[];
 
   constructor() {
     this.todoArray = [];
   }
 
-  addTodo(todo){
+  addTodo(todo) {
       this.todoArray.push(todo);
       return this.todoArray;
   }
@@ -20,10 +19,12 @@ export class TodoDataService {
     this.todoArray =  this.todoArray.filter(todo => todo.id !== toDo.id);
     return this;
   }
-  
+
   updateTodoByName(actualTodo, value) {
-    let updateTodo: {} =  this.todoArray.filter(todo => todo.title === actualTodo.title).map((item => item.description = value), item => item.complete = value.complete);
-    let newTodo: Todo = new Todo(actualTodo.title, value);
+    const updateTodo: {} =  this.todoArray
+                            .filter(todo => todo.title === actualTodo.title)
+                            .map((item => item.description = value), item => item.complete = value.complete);
+    const newTodo: Todo = new Todo(actualTodo.title, value);
     console.log(newTodo);
     Object.assign(actualTodo, updateTodo);
     console.log();
@@ -33,15 +34,15 @@ export class TodoDataService {
   }
 
   getAllTodos() {
-    return this.todoArray; 
+    return this.todoArray;
   }
 
   getTodoById(index): Todo {
     return this.todoArray.filter(todo => todo.id === index).pop();
   }
 
-  toggleTodoComplete (todo: Todo){
-    let updatedTodo = this.updateTodoByName(todo, {
+  toggleTodoComplete (todo: Todo) {
+    const updatedTodo = this.updateTodoByName(todo, {
       complete: !todo.complete
     });
     return updatedTodo;

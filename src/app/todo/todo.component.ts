@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../todo-data.service';
 import { TodoListComponent } from '../todo-list/todo-list.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Todo } from '../todo';
+import { Todo } from '../todo.model';
 
 @Component({
   selector: 'app-todo',
@@ -10,7 +10,7 @@ import { Todo } from '../todo';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todoArray: Array<Todo>;
+  todoArray: Todo[];
   todoForm: FormGroup;
 
   constructor( private todoDataService: TodoDataService,
@@ -21,22 +21,21 @@ export class TodoComponent implements OnInit {
     this.todoArray = this.todoDataService.getAllTodos();
   }
 
-  addTodo(){
-    if(this.todoForm.get('todo').value){
-      let newTodo: Todo = new Todo(this.todoForm.get('todo').value, 'description');
+  addTodo() {
+    if (this.todoForm.get('todo').value) {
+      const newTodo = new Todo(this.todoForm.get('todo').value, 'description');
       this.todoArray = this.todoDataService.addTodo(newTodo);
       this.todoForm.get('todo').setValue('');
     }
   }
-  
-  onRemoveTodo(todo){
-    for(let i=0 ;i<= this.todoArray.length ;i++){
-      if(todo == this.todoArray[i]){
-       this.todoArray.splice(i,1)
+  onRemoveTodo(todo) {
+    for (let i = 0; i <= this.todoArray.length; i++) {
+      if (todo === this.todoArray[i]) {
+        this.todoArray.splice(i, 1);
       }
      }
   }
-  buildForm():void{
+  buildForm(): void {
     const fields: any = {
       todo: [
         null,
@@ -47,7 +46,7 @@ export class TodoComponent implements OnInit {
     };
     this.todoForm = this.formBuilder.group(fields);
   }
-  isValid():Boolean {
+  isValid(): Boolean {
     return true;
   }
 }
