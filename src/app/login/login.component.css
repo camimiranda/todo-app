@@ -1,0 +1,64 @@
+.footer{
+    text-align:center;
+}
+
+a{
+    text-decoration: underline;
+    color: grey;
+}
+
+a:hover {
+    color: orangered;
+}
+
+button {
+    background: orange;
+    box-shadow: orange;
+}
+
+label {
+    font-size: 14px;
+}
+
+mat-card {
+    color: #333;
+    display: block;
+    margin: 1rem auto;
+    position: relative;
+    background-color: #fff;
+    text-align: left;
+    width: 70%
+}
+
+.content {
+  color: #333;
+  background-color: #fff;
+}
+
+.signin-header {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  border-bottom: 2px solid orange;
+}
+
+.title {
+    font-weight: 200;
+    line-height: 30px;
+    border-bottom: 2px solid orange;
+}
+
+.example-form {
+  width: 80%;
+}
+
+.example-full-width {
+  width: 80%;
+  text-align: center;
+  display: inline-block;
+  left: 13%;
+  border:none;
+}
+.example-full-width:focus {
+  outline:none !important;
+}

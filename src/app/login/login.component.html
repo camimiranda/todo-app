@@ -1,0 +1,26 @@
+<mat-card>
+    <h4 class="signin-header">Sign In</h4>
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()" class="example-form">
+            <mat-form-field class="example-full-width">
+                <label for="username">Username</label>
+                <input matInput type="text" name="username" formControlName="username" required>
+            </mat-form-field >
+            <mat-form-field class="example-full-width">
+                <label for=password>Password</label>
+                <input matInput type="password"  name="password" formControlName="password"required>
+            </mat-form-field>
+    </form>
+    <div class="footer">
+        <button mat-raised-button color="#ffb74d"
+            [disabled]="!myForm.valid">
+            Sign In
+        </button>
+        <br>
+        <br>
+        <a routerLink="/new_account">Create an account</a>
+        <br>
+        <a routerLink="/forgot_password">Forgot your password?</a>
+        <br>
+        <br>
+    </div>
+</mat-card>

@@ -1,0 +1,15 @@
+<mat-toolbar class="navigation">
+  <span>
+      <a href="#"> <i class="material-icons">home</i> </a>
+  </span>
+  <span>
+      <a routerLink="/todo"> To-Do</a>
+  </span>
+    <span class="logo-right">
+        <a routerLink="/login"><i class="material-icons">input</i>Login</a>
+    </span>
+
+  <!-- App logo -->
+</mat-toolbar>
+<app-login *ngIf="openLogin()"></app-login>
+

@@ -1,0 +1,61 @@
+/* Menu styles */
+span {
+  margin-right: 30px;
+  justify-content: space-between;
+}
+
+span a {
+  font-family:"Raleway";
+  color: white;
+  text-align: center;
+  align-content: flex-start;
+}
+
+nav a:hover{
+    background-color: rgb(245, 195, 103);
+    font-weight: bold;
+    color: black;
+}
+
+/* nav i.material-icons {
+    font-size: 24px;
+    height: 65px;
+    line-height: 56px;
+} */
+/* Large screen */
+mat-toolbar {
+    flex-flow: row wrap;
+    background-color:orange;
+    list-style: none;
+
+}
+
+mat-toolbar .logo-right {
+  position: absolute;
+  right: 0;
+}
+
+
+/* Responsive nav */
+@media all and (max-width: 800px) {
+    .navigation{
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+
+@media all and (max-width: 600px) {
+    .navigation {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
+        background-color:orange;
+        list-style: none;
+        margin: 0;
+      }
+    .navigation span a {
+        text-align: center;
+        justify-content: space-evenly;
+      }
+  }
+

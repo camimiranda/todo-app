@@ -1,0 +1,47 @@
+<div class="header">
+  <h4>Create your account</h4>
+  <br>
+</div>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div>
+    <div class="container">
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input type="text" class="form-control" formControlName="username" id="form-orange" />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" id="form-orange">
+      </div>
+      <div class="form-group">
+        <label for="confirm_email">Confirm E-mail</label>
+        <input type="text" class="form-control" id="form-orange">
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="form-orange" formControlName="username" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="form-orange">
+      </div>
+
+      <div class="form-group">
+
+        <div class="input-group">
+          <label for="birthday">Birthday</label>
+          <input class="form-control" placeholder="dd-mm-yyyy" id="form-orange" name="dp" [(ngModel)]="model"
+            ngbDatepicker #d="ngbDatepicker"> <br>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="create_account_button">
+    <button class="btn btn-warning" [disabled]="!myForm.valid">
+      Create Account
+    </button>
+  </div>
+</form>

@@ -1,0 +1,22 @@
+mongodb- nodejs- expressjs- npm
+MEAN- mongodb - expressjs - angular - nodejs
+expressjs and node js are related. 
+Angular a client side framework, allows to creat single page applications to render UI with dynamic data.
+Handles user input and communicates with backend services.
+--------------------------------
+nodejs
+Serveside library. Javascript on the server side.
+Listens to requests and is able to send back responses.
+Executes serve-side logic and is able to interact with databases and files.
+Alternative to PHP 
+---------------------------------
+expressjs
+A nodejs framework, which makes easier to write serveside code and logic.
+Offers same funcionality as node. Includes routing and view-rendering, etc.
+Can manage differents requests to different endpoints. 
+Simplifies usage of node, 
+----------------------------
+mongodb
+a nosql database, which stores documents in collections (instead of record in tables, as SQL)-
+Stores application data. Enforces no schemas or relations. Easy to connect to node/Express (not to angular)
+It's a database that can be easily integrated into Node/Express environment.
